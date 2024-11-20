@@ -7,7 +7,7 @@ import 'pages/contact_page.dart';
 import 'pages/favorite_page.dart';
 import 'pages/splash_screen.dart';
 import 'pages/profile_page.dart';
-
+import 'pages/service_page.dart';
 void main() => runApp(const MyApp());
 
 bool isLoggedIn = true; //kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkklogin
@@ -41,6 +41,8 @@ class MyApp extends StatelessWidget {
         '/contact': (context) => const ContactPage(),
         '/favorite': (context) => const FavoritePage(),
         '/profile': (context) => const ProfilePage(),
+         '/service': (context) => const ServicePage(),
+
       },
     );
   }
