@@ -30,15 +30,19 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-        child: Center(
-          child: Text(
+        child: Column(children: [
+          Text(
             'Item $index',
             style: TextStyle(
               color: Color(0xff7C7C7C),
-              fontSize: 16,
+              fontSize: 14,
             ),
           ),
-        ),
+          Image.asset(
+            'assets/images/fotoExemplo.png',
+            height: 80, // Ajuste o tamanho conforme necessário
+          ),
+        ]),
       ),
     );
   });
@@ -64,15 +68,19 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-        child: Center(
-          child: Text(
-            'Item ${index + 10}',
+        child: Column(children: [
+          Text(
+            'Item $index',
             style: TextStyle(
               color: Color(0xff7C7C7C),
-              fontSize: 16,
+              fontSize: 14,
             ),
           ),
-        ),
+          Image.asset(
+            'assets/images/fotoExemplo.png',
+            height: 80, // Ajuste o tamanho conforme necessário
+          ),
+        ]),
       ),
     );
   });
@@ -82,68 +90,54 @@ class _MyHomePageState extends State<MyHomePage> {
     return CustomScaffold(
       title: "Home",
       body: Center(
-        child: ListView(
+        child: Padding(
           padding: const EdgeInsets.all(16.0),
-          children: <Widget>[
-            const Text(
-              'Home',
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Color(0xff7C7C7C),
+          child: Column(
+            children: <Widget>[
+              const Text(
+                'Home',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff7C7C7C),
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Container(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Categorias',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff7C7C7C),
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  SizedBox(
-                    height: 120,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: listOne,
-                    ),
-                  ),
-                ],
+              const SizedBox(height: 20),
+              const Text(
+                'Categorias',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff7C7C7C),
+                ),
               ),
-            ),
-            const Divider(thickness: 2),
-            Container(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Profissionais',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff7C7C7C),
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  SizedBox(
-                    height: 180,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: listTwo,
-                    ),
-                  ),
-                ],
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 120,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: listOne,
+                ),
               ),
-            ),
-          ],
+              const Divider(thickness: 2),
+              const Text(
+                'Profissionais',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff7C7C7C),
+                ),
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 180,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: listTwo,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
